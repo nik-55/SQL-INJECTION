@@ -1,8 +1,12 @@
+// In terminal run node ./sanitizer.js
+// In last lines of this file username and password can be assigned 
+
+
 // This function takes a string as input and return string
 // that does not contain any symbol that may manipulate database query
 
 function removeSymbols(str) {
-  const symbols = [`"`, `'`, "`", "=", "-", "(", ")", "{", "}", "/", "\\", ";", "@"]
+  const symbols = [`"`, `'`, "`", "=", "-", "(", ")", "{", "}", "/", "\\", ";", "@", "+", ">", "<", " ", "\n", "\t"]
   function isSymbol(character) {
     for (let i = 0; i < symbols.length; i++) if (character === symbols[i]) return true;
     return false;
@@ -19,7 +23,7 @@ function removeSymbols(str) {
 // any vulnerable keywords 
 
 function removekeywords(str) {
-  const keywords = ["OR", "AND", "UNION"]
+  const keywords = ["OR", "AND", "UNION", "SELECT"]
   function removekeyword(keyword) {
     const UpperStr = str.toUpperCase()
     const index = UpperStr.search(keyword)
@@ -47,9 +51,9 @@ function sanitizer(username, password) {
     if (typeof username !== "string" || typeof password !== "string")
       throw new Error("Invalid input type");
 
-    // Throwing an error if input are empty string
-    if (username === "" || password === "")
-      throw new Error("Username or password field can not be emptied");
+    // Throwing an error if input are too short or too long
+    if (username.length < 5 || username.length > 1000 || password.length < 6 || password.length > 1000)
+      throw new Error("Username should contain around 5 to 1000 charcters and password around 6 to 1000 characters");
 
     // Removing Symbols
     username = removeSymbols(username);
@@ -67,11 +71,12 @@ function sanitizer(username, password) {
 }
 
 
-const username = "/10-AND1=1A=2NO0(R)UOAND)){{}Rnion9w2gyj==--1=-=-=12";
-const password = 'd\\\d';
-const result = sanitizer(username, password);
-console.log(result);
-
-
 // sanitizater is not able to santize the following type of inputs 
 const vulnerabilities = []
+
+
+// Username and password can be assigned here
+const username = "nikhil_mahajan";
+const password = "chemical_engineering"
+const result = sanitizer(username, password);
+console.log(result);
