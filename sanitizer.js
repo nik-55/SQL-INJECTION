@@ -2,7 +2,7 @@
 // that does not contain any symbol that may manipulate database query
 
 function removeSymbols(str) {
-  const symbols = [`"`, `'`, "`", "=", "-", "(", ")", "{", "}", "/",]
+  const symbols = [`"`, `'`, "`", "=", "-", "(", ")", "{", "}", "/", "\\", ";", "@"]
   function isSymbol(character) {
     for (let i = 0; i < symbols.length; i++) if (character === symbols[i]) return true;
     return false;
@@ -68,10 +68,10 @@ function sanitizer(username, password) {
 
 
 const username = "/10-AND1=1A=2NO0(R)UOAND)){{}Rnion9w2gyj==--1=-=-=12";
-const password = "dAoaNdRNunioronDopperoroororororoorORrrorORo";
+const password = 'd\\\d';
 const result = sanitizer(username, password);
 console.log(result);
 
 
 // sanitizater is not able to santize the following type of inputs 
-const vulnerabilities = ["d\d"]
+const vulnerabilities = []
