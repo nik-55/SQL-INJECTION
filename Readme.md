@@ -12,7 +12,7 @@ Cyber security is the practice of defending computers, servers, mobile devices, 
 
 ### Dictionary Attack
 
-- Attack uses a list of possible password templates and automatically generates a variable component. For example, based on information about the victim’s name, an attacker can test the password denisXXX, substituting XXX for the numbers 001 to 999.
+- Attack uses a list of possible password templates and automatically generates a variable component. For example, based on information about the victim’s name, an attacker can test the password denisXYZ, substituting XYZ for the numbers 001 to 999.
 
 > Use Strong Passwords
 
@@ -66,5 +66,55 @@ Cyber security is the practice of defending computers, servers, mobile devices, 
 - When you connect to public wi-fi and free public hotspots, there are severe risks of data breaches.
 - The main reason for it is unencrypted data. While being connected to a free service, the data from your device goes unencrypted to the router.
 - It means that anyone using the same network can look at your traffic and thereby steal your data.
+
+### Eavesdropping Attack
+
+- It occurs when a hacker intercepts, deletes, or modifies data that is transmitted between two devices.
+
+> Avoid using unsecured public WIFI networks.
+
+---
+
+## Malware
+
+- It is a file or code, typically delivered over a network, that infects, explores, steals or conducts virtually any behavior an attacker wants.
+- Email attachments containing malicious code can be forwarded unknowningly by an user and thus the malware can spread even deeper into an organization, further compromising a network.
+
+### Ransomware
+
+- It is a type of malware that threatens to publish or blocks access to data or a computer system, usually by encrypting it, until the victim pays a ransom fee to the attacker.
+- In many cases, the ransom demand comes with a deadline. If the victim doesn’t pay in time, the data is gone forever.
+
+---
+
+## Botnet
+
+- It is a network of computers infected by malware that are under the control of a single attacking party, known as the “bot-herder.”
+- Each individual machine under the control of the bot-herder is known as a bot.
+- From one central point, the attacking party can command every computer on its botnet to simultaneously carry out a coordinated criminal action.
+- The scale of a botnet (many comprised of millions of bots) enable the attacker to perform large-scale actions.
+
+---
+
+## Encryption
+
+- It is the conversion of data from a readable format into an encoded format. Encrypted data can only be read or processed after it's been decrypted.
+- It is the simplest and most important way to ensure a computer system's information can't be stolen and read by someone who wants to use it for malicious purposes.
+
+---
+
+## OSI Model
+
+- The Open Systems Interconnection (OSI) model describes seven layers that computer systems use to communicate over a network.
+
+### 7 layers of OSI Model
+
+- Application Layer
+- Presentation Layer
+- Session Layer
+- Transport Layer
+- Network Layer
+- Data Link Layer
+- Physical Layer
 
 ---
